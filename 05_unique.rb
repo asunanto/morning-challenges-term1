@@ -10,6 +10,7 @@
 # Easy to do right? Now try working it out with three lines of code, you should be able to do it with 6 words and some operators and syntax.
 mel_sku_list = ["112334", "276834", "098464", "356498", "065134", "124589", "132548", "102334", "278834", "078464",  "356298", "085134", "134589", "132598", "152334", "876834", "088464", "336498", "005134", "124580",  "132588", "102333", "268834", "098464", "956298", "081134", "134889", "132698"]
 bri_sku_list = ["132588", "102333", "268834", "098464", "956698", "081134", "134889", "132698", "112334", "276834", "098464", "356498", "065134", "132548", "102334", "278834", "078464", "356298", "005134", "134589", "132598",  "876834", "088464", "336498", "005134", "124588"]
+<<<<<<< HEAD
 bri_sku_new = []
 for bri_sku in bri_sku_list
     for mel_sku in mel_sku_list
@@ -18,5 +19,8 @@ for bri_sku in bri_sku_list
         end
     end
 end
+=======
+bri_sku_new = bri_sku_list | mel_sku_list
+>>>>>>> 05_unique
 
 puts bri_sku_new
