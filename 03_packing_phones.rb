@@ -21,6 +21,7 @@
 #
 #    Keep it as simple as you can.
 
+<<<<<<< HEAD
 # width_fitbox = (32/5).to_i
 # width_fitbox_r = (32%5)
 # length_fitbox = (43/7.4).to_i
@@ -29,18 +30,25 @@
 # total_box_fitted = width_fitbox * length_fitbox* height_fitbox
 # puts total_box_fitted
 
+=======
+>>>>>>> a66f15b560d5615b416b1045b016e9e610546faf
 phone = [5, 7.4, 4]
 box = [32, 43, 22.1]
 
 max_phones = 0
 phone.permutation do |orient|
     print orient
+<<<<<<< HEAD
     puts 
+=======
+    puts
+>>>>>>> a66f15b560d5615b416b1045b016e9e610546faf
     num_phones = (box[0] / orient[0]).to_i * (box[1] / orient[1]).to_i * (box[2] / orient[2]).to_i
     max_phones = num_phones if num_phones > max_phones
 end
 
 puts max_phones
+<<<<<<< HEAD
 
 
 
@@ -50,3 +58,5 @@ puts max_phones
 
 
 
+=======
+>>>>>>> a66f15b560d5615b416b1045b016e9e610546faf
