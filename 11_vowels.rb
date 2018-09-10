@@ -18,15 +18,15 @@ def count_vowels (string)
   char_arr = string.chars
   return_vowel = []
   for char in char_arr
-    return_vowel << char if ['a','e','i','o','u'].include?(char)
+    return_vowel << char if ['a','e','i','o','u','A','E','I','O','U'].include?(char)
   end
   return return_vowel
 end
 
 # def count_vowels(str)
-#   str.scan(/[aeoui]/)
+#   str.scan(/[aeouiAEIOU]/)
 # end
 
 
-print count_vowels("The quick brown fox")
+print count_vowels("The quick brown Fox")
 puts
