@@ -14,6 +14,19 @@
 # ruby tests/04_vowels_test.rb
 #
 
-def vowels (string)
-  # Your code here
+def count_vowels (string)
+  char_arr = string.chars
+  return_vowel = []
+  for char in char_arr
+    return_vowel << char if ['a','e','i','o','u'].include?(char)
+  end
+  return return_vowel
 end
+
+# def count_vowels(str)
+#   str.scan(/[aeoui]/)
+# end
+
+
+print count_vowels("The quick brown fox")
+puts
