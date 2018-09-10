@@ -28,5 +28,5 @@ end
 # end
 
 
-print count_vowels("The quick brown Fox")
+print count_vowels("The quick brown FOx")
 puts
