@@ -16,5 +16,6 @@
 #
 
 def palindrome (string)
-  # Your code here
+  return string == string.reverse
 end
+puts palindrome("racecar")

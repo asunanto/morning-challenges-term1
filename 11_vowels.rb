@@ -24,7 +24,7 @@ def count_vowels (string)
 end
 
 # def count_vowels(str)
-#   str.scan(/[aeouiAEIOU]/)
+#   str.scan(/[aeoui]/i)
 # end
 
 
