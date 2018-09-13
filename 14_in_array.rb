@@ -16,5 +16,13 @@
 #
 
 def in_array (needle, haystack)
-  # Your code here
+  # for string in haystack
+  #   return true if string == needle 
+  # end
+  # return false
+
+  haystack.include?(needle)
 end
+
+puts in_array("hello", ["hi", "howdy", "hello"])
+puts in_array("drake", ["jayz", "kanye", "yachty"])
