@@ -20,6 +20,10 @@
 #
 
 def in_array_advanced (needle, haystack, strict)
-  # Your code here
-  
+    for string in haystack
+      return true if (string == needle) && (strict == true)
+      return true if (string.downcase == needle.downcase) && (strict == false)
+    end
+    return false
 end
+
