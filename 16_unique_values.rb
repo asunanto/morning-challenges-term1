@@ -19,5 +19,19 @@
 #
 
 def unique (mylist)
-  # Your code here
+  # hash = {}
+  uniq_list =[]
+  # for element in mylist
+  #   hash[element] = 1 + (hash[element] || 0)
+  # end
+  # for key,val in hash
+  #   uniq_list << key
+  # end
+  # return uniq_list
+
+  for element in mylist
+    uniq_list << element  if !uniq_list.include?(element) 
+  end
+  return uniq_list
 end
+
