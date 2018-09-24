@@ -31,6 +31,15 @@
 #
 
 def firstNonRepeat (string)
-  # Your code here
-  # Whiteboard first!
+  # string.chars.each { |char| return char if string.count(char)==1}
+  # false
+
+  for char in string.chars
+     return char if string.count(char) == 1
+  end
+  false
+
 end
+
+puts firstNonRepeat('aaaabbbcccdeeefgh') 
+puts firstNonRepeat('wwwhhhggg')

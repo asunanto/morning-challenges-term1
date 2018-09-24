@@ -23,5 +23,8 @@
 #
 
 def ExesAndOhs(string)
-  # yo' co' here
+  # exes = string.downcase.chars.count('x')
+  # ohs = string.downcase.chars.count('o')
+  # return exes == ohs 
+  string.downcase.chars.count('x') == string.downcase.chars.count('o')
 end
