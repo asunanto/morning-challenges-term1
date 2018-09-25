@@ -19,6 +19,7 @@
 #
 
 def unique (mylist)
+<<<<<<< HEAD
   # hash = {}
   uniq_list =[]
   # for element in mylist
@@ -33,5 +34,10 @@ def unique (mylist)
     uniq_list << element  if !uniq_list.include?(element) 
   end
   return uniq_list
+=======
+  hash = {}
+  mylist.each { |x| hash[x] = true }
+  hash.keys
+>>>>>>> b028df5d644e116007105a13b9522c8e1282f993
 end
 

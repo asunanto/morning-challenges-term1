@@ -31,6 +31,7 @@
 #
 
 def firstNonRepeat (string)
+<<<<<<< HEAD
   # string.chars.each { |char| return char if string.count(char)==1}
   # false
 
@@ -39,6 +40,10 @@ def firstNonRepeat (string)
   end
   false
 
+=======
+  string.chars.each { |x| return x if string.count(x) == 1 }
+  false
+>>>>>>> b028df5d644e116007105a13b9522c8e1282f993
 end
 
 puts firstNonRepeat('aaaabbbcccdeeefgh') 
