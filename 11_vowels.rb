@@ -14,6 +14,7 @@
 # ruby tests/04_vowels_test.rb
 #
 
+<<<<<<< HEAD
 def count_vowels (string)
   char_arr = string.chars
   return_vowel = []
@@ -30,3 +31,8 @@ end
 
 print count_vowels("The quick brown FOx")
 puts
+=======
+def vowels (string)
+  string.scan(/[aeiou]/i)
+end
+>>>>>>> b028df5d644e116007105a13b9522c8e1282f993

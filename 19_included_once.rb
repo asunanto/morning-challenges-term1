@@ -19,11 +19,15 @@
 #
 
 def includedOnce (haystack, needle)
+<<<<<<< HEAD
     # for needle in haystack
     #   return false if haystack.count(needle) > 1
     # end
     # return true
     haystack.count(needle) == 1
+=======
+  haystack.count(needle) == 1
+>>>>>>> b028df5d644e116007105a13b9522c8e1282f993
 end
 puts includedOnce(['hello','hi','hi'], 'hi')
 puts includedOnce(['hello','hi','hey'], 'hi')
