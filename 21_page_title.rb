@@ -11,7 +11,16 @@
 # Check your answers by running the tests:
 # ruby tests/16_page_title_test.rb
 #
+require 'nokogiri'
+require 'open-uri'
 
 def pageTitle(url)
-  # your code here
+  #  return open(url).read.scan(/<title>(.*?)<\/title>/)
+   doc = Nokogiri::HTML(open(url))
+   return doc.at_css('title').text
 end
+
+
+puts pageTitle("http://google.com")
+ 
+
