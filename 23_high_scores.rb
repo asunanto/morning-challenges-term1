@@ -24,5 +24,22 @@
 # # And so on...
 
 class HighScoreTable
-  # your code here
+  def initialize (highscore_limit)
+    @highscore_limit = highscore_limit
+    @highscore_arr = []
+  end
+  def update(new_score)
+    @highscore_arr << new_score
+    @highscore_arr = @highscore_arr.sort{|a,b| b <=> a}
+    @highscore_arr = @highscore_arr[0...@highscore_limit]
+  end
+  def scores
+    return @highscore_arr
+  end
+  def reset
+    @highscore_arr = []
+  end
+
 end
+
+
