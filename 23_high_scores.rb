@@ -39,7 +39,9 @@ class HighScoreTable
   def reset
     @highscore_arr = []
   end
-
 end
+
+highScoreTable = HighScoreTable.new(3)
+p highScoreTable.scores
 
 
