@@ -38,9 +38,3 @@ class Card
         @rank <=> other.rank
     end
 end
-
-        queen_of_spades = Card.new(:spades, 12)
-        ten_of_clubs = Card.new(:clubs, 10)
-
-puts queen_of_spades >ten_of_clubs
- 

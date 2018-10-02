@@ -20,17 +20,28 @@ require_relative '24_card_game'
 class Deck
   def initialize
     # Create a new array of cards
+    @deck = Array.new(13){Array.new(4)}
+    @suits = ['S','H','C','D']
+    for i in 1..13
+      for j in 0...@suits.length
+        @deck[i-1][j] = i.to_s + @suits[j]
+      end
+    end
+    @deck = @deck.flatten
   end
   
   def shuffle
     # Shuffle the remaining cards
+    @deck.shuffle
   end
 
   def draw(n=1)
-    # Draw (remove) n cards from the deck. Return those cards
+    @deck.pop(n)
   end
 
   def count
-    # How many cards are left?
+    @deck.length
   end
 end
+
+
