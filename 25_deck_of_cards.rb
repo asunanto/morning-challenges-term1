@@ -18,29 +18,37 @@
 require_relative '24_card_game'
 
 class Deck
+  attr_accessor :cards
   def initialize
     # Create a new array of cards
-    @deck = Array.new(13){Array.new(4)}
-    @suits = ['S','H','C','D']
+    # @deck = Array.new(13){Array.new(4)}
+    # @suits = ['S','H','C','D']
+    # for i in 1..13
+    #   for j in 0...@suits.length
+    #     @deck[i-1][j] = i.to_s + @suits[j]
+    #   end
+    # end
+    # @cards = @deck.flatten
+    @cards = []
     for i in 1..13
-      for j in 0...@suits.length
-        @deck[i-1][j] = i.to_s + @suits[j]
-      end
+      @cards << Card.new(:spades, i)
+      @cards << Card.new(:hearts, i)
+      @cards << Card.new(:clubs, i)
+      @cards << Card.new(:diamonds, i)
     end
-    @deck = @deck.flatten
   end
   
   def shuffle
     # Shuffle the remaining cards
-    @deck.shuffle
+    @cards = @cards.shuffle
   end
 
   def draw(n=1)
-    @deck.pop(n)
+    @cards.pop(n)
   end
 
   def count
-    @deck.length
+    @cards.length
   end
 end
 
