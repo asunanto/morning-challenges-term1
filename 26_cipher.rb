@@ -14,15 +14,26 @@
 # The shift will always be in range of [1, 26].
 
 class CaesarCipher
+
   def initialize(shift)
-    #your code here
+    @shift = shift
   end
 
   def encode(string)
-    #your code here
+    string.upcase.tr(alphabet, cipher)
   end
-  
+
   def decode(string)
-    #your code here
+    string.upcase.tr(cipher, alphabet)
   end
+
+  def alphabet
+    [*('A'..'Z')].join
+  end
+
+  def cipher
+    alphabet.chars.rotate(@shift).join 
+  end
+
 end
+
