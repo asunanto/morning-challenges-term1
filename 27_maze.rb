@@ -1,67 +1,37 @@
 require 'matrix'
 
 class Maze
-    attr_accessor :maze
+
+    STEP = {'N': [-1,0], 'S': [1,0], 'E': [0,1], 'W':[0,-1]}  
+
     def initialize(maze)
         @maze = Matrix[*maze]
-        @current_pos = @maze.index(2)
-        @direction = {'N': [-1,0], 'S': [1,0], 'E': [0,1], 'W':[0,-1]}
-        
+        @current_pos = @maze.index(2) #find the position of number '2' in matrix
     end
+
     def walk(moves)
-        for move in moves
-            if can_move?(move) == true 
-                @current_pos = @next_pos
-            elsif can_move?(move) == 'Finish'
-                return "Finish"
-            elsif can_move?(move) == 'Dead'
+        for move in moves   
+            if can_move?(move)
+                @current_pos = @next_pos 
+                return "Finish" if @state == 3
+            else
                 return "Dead"
-            end
+            end 
         end
-        return "Lost" if @maze[@current_pos[0],@current_pos[1]] == 0
 
+        return "Lost" if @state == 0 || @state == 2 
     end
 
-    def can_move?(direction)
-        
-        case direction
-        when 'N'
-            @next_pos = Vector[*@current_pos] + Vector[*@direction[:N]]
-        when 'S'
-            @next_pos = Vector[*@current_pos] + Vector[*@direction[:S]]
-        when 'E'
-            @next_pos = Vector[*@current_pos] + Vector[*@direction[:E]]
-        when 'W'
-            @next_pos = Vector[*@current_pos] + Vector[*@direction[:W]]
-        end
-
-        return "Dead" if @next_pos[0] < 0 || @next_pos[1] < 0
-    
-        case @maze[@next_pos[0], @next_pos[1]]
-        when 3
-            return "Finish"
-        when 2
-
-        when 1
-            return "Dead"
-        when 0
-            return true
-        end
-        
+    def can_move?(direction)    # method that returns boolean for the next step
+        @next_pos = Vector[*@current_pos] + Vector[*STEP[:"#{direction}"]] # move a step in a specified direction
+        # if coordinates out of range return false i.e dead
+        return false if @next_pos.all?(&:negative?) || @next_pos.any? {|pos| pos >= @maze.row_size }
+        @state = @maze[@next_pos[0], @next_pos[1]] #  @state contain 0, 1, 2, 3 depending on the position of the next step
+        return @state != 1 # returns false if @state == 1,  returns true if @state == 0,2,3
     end
-    
-    
+
 end
 
-# maze = Maze.new([
-#     [1,1,1,1,1,1,1],
-#     [1,0,0,0,0,0,3],
-#     [1,0,1,0,1,0,1],
-#     [0,0,1,0,0,0,1],
-#     [1,0,1,0,1,0,1],
-#     [1,0,0,0,0,0,1],
-#     [1,2,1,0,1,0,1]
-# ])   
 
 
 
